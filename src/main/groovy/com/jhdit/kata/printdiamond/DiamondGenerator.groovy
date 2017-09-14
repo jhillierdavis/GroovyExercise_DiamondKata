@@ -1,9 +1,9 @@
 package com.jhdit.kata.printdiamond
 
-class DiamondPrinter {
+class DiamondGenerator {
     private AlphaUtils alphaUtils = new AlphaUtils()
 
-    String generate(char ch) {
+    String generateUpTo(char ch) {
         int offset = alphaUtils.getPosition(ch)
         return generateDiamond(offset, ch)
     }

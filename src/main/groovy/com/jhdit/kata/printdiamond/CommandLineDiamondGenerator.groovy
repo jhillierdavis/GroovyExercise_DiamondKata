@@ -5,8 +5,8 @@ class CommandLineDiamondGenerator {
     static void main(String[] args)  {
         char ch = this.validateCommandLineArgs(args)
 
-        DiamondPrinter dp = new DiamondPrinter()
-        println dp.generate(ch)
+        DiamondGenerator dp = new DiamondGenerator()
+        println dp.generateUpTo(ch)
     }
 
     static char validateCommandLineArgs(String[] args)  {

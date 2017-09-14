@@ -3,15 +3,15 @@ package com.jhdit.kata.printdiamond
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class DiamondPrinterSpec extends Specification {
+class DiamondGeneratorSpec extends Specification {
 
     @Unroll
     def "diamond generation with input #testInput"() {
         given:
-        def diamondPrinter = new DiamondPrinter()
+        def diamondPrinter = new DiamondGenerator()
 
         when:
-        def output = diamondPrinter.generate(testInput as char)
+        def output = diamondPrinter.generateUpTo(testInput as char)
 
         then:
         output == testOutput
@@ -26,7 +26,7 @@ class DiamondPrinterSpec extends Specification {
     @Unroll
     def "line generation for #testChar and #lineNumber"() {
         given:
-        def diamondPrinter = new DiamondPrinter()
+        def diamondPrinter = new DiamondGenerator()
 
         expect:
         expected == diamondPrinter.generateLine(testChar, lineNumber)
