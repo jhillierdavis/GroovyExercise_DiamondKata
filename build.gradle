@@ -1,0 +1,30 @@
+apply plugin: "application"
+apply plugin: "java"
+apply plugin: "groovy"
+
+
+// mainClassName =  project.getProperty('mainClassName')
+
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.12'
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+}
+
+mainClassName = "com.jhdit.kata.printdiamond.CommandLineDiamondGenerator"
+
+// gradle run  -PappArgs="['Z']"
+run {
+    if ( project.hasProperty("appArgs") ) {
+        args Eval.me(appArgs)
+    }
+}

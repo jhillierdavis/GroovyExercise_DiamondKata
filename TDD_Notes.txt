@@ -1,0 +1,8 @@
+Success cases:
+
+* Generate line based on position (white space prefix & suffix)
+
+Exceptional cases:
+
+* Handle lowercase input char
+* Handle invalid input char
